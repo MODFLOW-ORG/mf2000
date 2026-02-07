@@ -78,5 +78,6 @@ exe = executable(
                  'mf2000',
                  sources,
                  dependencies: extra_deps,
+                 link_language: 'fortran',
                  install: true
                 )
