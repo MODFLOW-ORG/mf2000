@@ -37,6 +37,11 @@ endif
 add_project_arguments(fc.get_supported_arguments(compile_args), language: 'fortran')
 add_project_link_arguments(fc.get_supported_arguments(link_args), language: 'fortran')
 
+# Define _UF for C code when using gfortran or Intel Fortran (use trailing underscore for Fortran symbols)
+if fc_id == 'gcc' or fc_id == 'intel' or fc_id == 'intel-cl' or fc_id == 'intel-llvm' or fc_id == 'intel-llvm-cl'
+  add_project_arguments('-D_UF', language: 'c')
+endif
+
 subdir('src')
 
 # tests
