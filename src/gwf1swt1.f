@@ -351,8 +351,8 @@ C      READ(IN,'(A)') LINE
 C
 C1------READ IN ARRAYS WITH ONE VALUE FOR ALL LAYERS WITH INTERBED STORAGE
       CALL U2DREL(GL(1,1,0),ANAME(6),NROW,NCOL,1,IN,IOUT)    !change zls read to gl read
-      CALL U2DREL( SGM,ANAME(10),NROW,NCOL,1,IN,IOUT)
-      CALL U2DREL( SGS,ANAME(11),NROW,NCOL,1,IN,IOUT)
+      CALL U2DREL( SGM(1,1),ANAME(10),NROW,NCOL,1,IN,IOUT)
+      CALL U2DREL( SGS(1,1),ANAME(11),NROW,NCOL,1,IN,IOUT)
 C3------READ IN ARRAYS FOR EACH LAYER WITH INTERBED STORAGE
       DO KQ=1,NSYSTM
       K=LNWT(KQ)
@@ -505,9 +505,9 @@ C COMPUTE EQUIVALENT ELASTIC PROPERTY (Cr OR Sske)
         ENDDO
         WRITE(IOUT,'(A,I4,A)') ' The following array is for system',
      2  KQ,' of compressible interbeds:'
-        IF(ISTFM.LT.0) CALL ULAPRS(BUFF,TEXT(7),1,1,
+        IF(ISTFM.LT.0) CALL ULAPRS(BUFF(1,1,1),TEXT(7),1,1,
      1           NCOL,NROW,K,-ISTFM,IOUT)
-        IF(ISTFM.GE.0) CALL ULAPRW(BUFF,TEXT(7),1,1,
+        IF(ISTFM.GE.0) CALL ULAPRW(BUFF(1,1,1),TEXT(7),1,1,
      1           NCOL,NROW,K,ISTFM,IOUT)
         ELSE
          DO I=1,NROW
@@ -523,9 +523,9 @@ C COMPUTE EQUIVALENT ELASTIC PROPERTY (Cr OR Sske)
          ENDDO
         WRITE(IOUT,'(A,I4,A)') ' The following array is for system',
      2  KQ,' of compressible interbeds:'
-        IF(ISTFM.LT.0) CALL ULAPRS(BUFF,TEXT(5),1,1,
+        IF(ISTFM.LT.0) CALL ULAPRS(BUFF(1,1,1),TEXT(5),1,1,
      1           NCOL,NROW,K,-ISTFM,IOUT)
-        IF(ISTFM.GE.0) CALL ULAPRW(BUFF,TEXT(5),1,1,
+        IF(ISTFM.GE.0) CALL ULAPRW(BUFF(1,1,1),TEXT(5),1,1,
      1           NCOL,NROW,K,ISTFM,IOUT)
       ENDIF
 C COMPUTE EQUIVALENT INELASTIC PROPERTY (Cc OR Sskv)
@@ -541,9 +541,9 @@ C COMPUTE EQUIVALENT INELASTIC PROPERTY (Cc OR Sskv)
          ENDDO
         WRITE(IOUT,'(A,I4,A)') ' The following array is for system',
      2  KQ,' of compressible interbeds:'
-        IF(ISTFM.LT.0) CALL ULAPRS(BUFF,TEXT(8),1,1,
+        IF(ISTFM.LT.0) CALL ULAPRS(BUFF(1,1,1),TEXT(8),1,1,
      1           NCOL,NROW,K,-ISTFM,IOUT)
-        IF(ISTFM.GE.0) CALL ULAPRW(BUFF,TEXT(8),1,1,
+        IF(ISTFM.GE.0) CALL ULAPRW(BUFF(1,1,1),TEXT(8),1,1,
      1           NCOL,NROW,K,ISTFM,IOUT)
         ELSE
          DO I=1,NROW
@@ -559,9 +559,9 @@ C COMPUTE EQUIVALENT INELASTIC PROPERTY (Cc OR Sskv)
          ENDDO
         WRITE(IOUT,'(A,I4,A)') ' The following array is for system',
      2  KQ,' of compressible interbeds:'
-        IF(ISTFM.LT.0) CALL ULAPRS(BUFF,TEXT(6),1,1,
+        IF(ISTFM.LT.0) CALL ULAPRS(BUFF(1,1,1),TEXT(6),1,1,
      1           NCOL,NROW,K,-ISTFM,IOUT)
-        IF(ISTFM.GE.0) CALL ULAPRW(BUFF,TEXT(6),1,1,
+        IF(ISTFM.GE.0) CALL ULAPRW(BUFF(1,1,1),TEXT(6),1,1,
      1           NCOL,NROW,K,ISTFM,IOUT)
        ENDIF
        ENDDO
@@ -819,9 +819,9 @@ C COMPUTE EQUIVALENT ELASTIC PROPERTY (Cr OR Sske)
          ENDDO
         WRITE(IOUT,'(A,I4,A)') ' The following array is for system',
      2  KQ,' of compressible interbeds:'
-        IF(ISTFM.LT.0) CALL ULAPRS(BUFF,TEXT(7),1,1,
+        IF(ISTFM.LT.0) CALL ULAPRS(BUFF(1,1,1),TEXT(7),1,1,
      1           NCOL,NROW,K,-ISTFM,IOUT)
-        IF(ISTFM.GE.0) CALL ULAPRW(BUFF,TEXT(7),1,1,
+        IF(ISTFM.GE.0) CALL ULAPRW(BUFF(1,1,1),TEXT(7),1,1,
      1           NCOL,NROW,K,ISTFM,IOUT)
         ELSE
          DO I=1,NROW
@@ -837,9 +837,9 @@ C COMPUTE EQUIVALENT ELASTIC PROPERTY (Cr OR Sske)
          ENDDO
         WRITE(IOUT,'(A,I4,A)') ' The following array is for system',
      2  KQ,' of compressible interbeds:'
-        IF(ISTFM.LT.0) CALL ULAPRS(BUFF,TEXT(5),1,1,
+        IF(ISTFM.LT.0) CALL ULAPRS(BUFF(1,1,1),TEXT(5),1,1,
      1           NCOL,NROW,K,-ISTFM,IOUT)
-        IF(ISTFM.GE.0) CALL ULAPRW(BUFF,TEXT(5),1,1,
+        IF(ISTFM.GE.0) CALL ULAPRW(BUFF(1,1,1),TEXT(5),1,1,
      1           NCOL,NROW,K,ISTFM,IOUT)
         ENDIF
 C COMPUTE EQUIVALENT INELASTIC PROPERTY (Cc OR Sskv)
@@ -855,9 +855,9 @@ C COMPUTE EQUIVALENT INELASTIC PROPERTY (Cc OR Sskv)
          ENDDO
         WRITE(IOUT,'(A,I4,A)') ' The following array is for system',
      2  KQ,' of compressible interbeds:'
-        IF(ISTFM.LT.0) CALL ULAPRS(BUFF,TEXT(8),1,1,
+        IF(ISTFM.LT.0) CALL ULAPRS(BUFF(1,1,1),TEXT(8),1,1,
      1           NCOL,NROW,K,-ISTFM,IOUT)
-        IF(ISTFM.GE.0) CALL ULAPRW(BUFF,TEXT(8),1,1,
+        IF(ISTFM.GE.0) CALL ULAPRW(BUFF(1,1,1),TEXT(8),1,1,
      1           NCOL,NROW,K,ISTFM,IOUT)
         ELSE
          DO I=1,NROW
@@ -873,9 +873,9 @@ C COMPUTE EQUIVALENT INELASTIC PROPERTY (Cc OR Sskv)
         ENDDO
         WRITE(IOUT,'(A,I4,A)') ' The following array is for system',
      2  KQ,' of compressible interbeds:'
-        IF(ISTFM.LT.0) CALL ULAPRS(BUFF,TEXT(6),1,1,
+        IF(ISTFM.LT.0) CALL ULAPRS(BUFF(1,1,1),TEXT(6),1,1,
      1           NCOL,NROW,K,-ISTFM,IOUT)
-        IF(ISTFM.GE.0) CALL ULAPRW(BUFF,TEXT(6),1,1,
+        IF(ISTFM.GE.0) CALL ULAPRW(BUFF(1,1,1),TEXT(6),1,1,
      1           NCOL,NROW,K,ISTFM,IOUT)
        ENDIF
        ENDDO
@@ -1172,9 +1172,9 @@ C5-------PRINT SUBSIDENCE.
        IF(OCFLG2(1,NNSTP)) THEN
         WRITE(IOUT,'(2A)') ' The following subsidence array is the sum',
      1   ' of compaction values for all systems of interbeds:'
-        IF(ISWOCF(1).LT.0) CALL ULAPRS(BUFF,TEXT(1),KSTP,KPER,NCOL,
+        IF(ISWOCF(1).LT.0) CALL ULAPRS(BUFF(1,1,1),TEXT(1),KSTP,KPER,NCOL,
      1            NROW,1,-ISWOCF(1),IOUT)
-        IF(ISWOCF(1).GE.0) CALL ULAPRW(BUFF,TEXT(1),KSTP,KPER,NCOL,
+        IF(ISWOCF(1).GE.0) CALL ULAPRW(BUFF(1,1,1),TEXT(1),KSTP,KPER,NCOL,
      1             NROW,1,ISWOCF(1),IOUT)
        ENDIF
 C
@@ -1197,7 +1197,12 @@ C7------PRINT AND STORE COMPACTION FOR EACH SYSTEM OF INTERBEDS.
      1             NCOL,NROW,K,ISWOCF(3),IOUT)
         ENDIF
         IF(OCFLG2(6,NNSTP)) THEN
-         CALL ULASAV(SUB(1,1,KQ),TEXT(3),KSTP,KPER,PERTIM,TOTIM,NCOL,
+         DO I=1,NROW
+         DO J=1,NCOL
+          BUFF(J,I,1)=SUB(J,I,KQ)
+         ENDDO
+         ENDDO
+         CALL ULASAV(BUFF(1,1,1),TEXT(3),KSTP,KPER,PERTIM,TOTIM,NCOL,
      1              NROW,KQ,ISWOCU(3))
         ENDIF
         ENDDO
@@ -1299,7 +1304,12 @@ C ------PRINT AND SAVE PRECOCSOLIDATION STRESS
      1        NCOL,NROW,KKL,ISWOCF(5),IOUT)
         ENDIF
         IF(OCFLG2(10,NNSTP)) THEN
-         CALL ULASAV(PCS(1,1,KKL),TEXT(5),KSTP,KPER,PERTIM,TOTIM,NCOL,
+         DO I=1,NROW
+         DO J=1,NCOL
+          BUFF(J,I,1)=PCS(J,I,KKL)
+         ENDDO
+         ENDDO
+         CALL ULASAV(BUFF(1,1,1),TEXT(5),KSTP,KPER,PERTIM,TOTIM,NCOL,
      1          NROW,KKL,ISWOCU(5))
         ENDIF
        enddo
@@ -1339,7 +1349,12 @@ C ------PRINT AND SAVE GEOSTATIC STRESS
      1      NCOL, NROW,KKL,ISWOCF(7),IOUT)
        ENDIF
        IF(OCFLG2(14,NNSTP)) THEN
-        CALL ULASAV(GL(1,1,KKL),TEXT(7),KSTP,KPER,PERTIM,TOTIM,NCOL,
+        DO I=1,NROW
+        DO J=1,NCOL
+         BUFF(J,I,1)=GL(J,I,KKL)
+        ENDDO
+        ENDDO
+        CALL ULASAV(BUFF(1,1,1),TEXT(7),KSTP,KPER,PERTIM,TOTIM,NCOL,
      1          NROW,KKL,ISWOCU(7))
        ENDIF
        enddo
@@ -1379,7 +1394,12 @@ C ------PRINT AND SAVE EFFECTIVE STRESS
      1      NCOL, NROW,KKL,ISWOCF(9),IOUT)
        ENDIF
       IF(OCFLG2(18,NNSTP)) THEN
-       CALL ULASAV(EST(1,1,KKL),TEXT(9),KSTP,KPER,PERTIM,TOTIM,NCOL,
+       DO I=1,NROW
+       DO J=1,NCOL
+        BUFF(J,I,1)=EST(J,I,KKL)
+       ENDDO
+       ENDDO
+       CALL ULASAV(BUFF(1,1,1),TEXT(9),KSTP,KPER,PERTIM,TOTIM,NCOL,
      1          NROW,KKL,ISWOCU(9))
        ENDIF
        ENDDO
@@ -1420,7 +1440,12 @@ C7------PRINT AND STORE VOID RATIO FOR EACH SYSTEM OF INTERBEDS.
      1             NCOL,NROW,K,ISWOCF(11),IOUT)
        ENDIF
        IF(OCFLG2(22,NNSTP)) THEN
-        CALL ULASAV(VOID(1,1,KQ),TEXT(11),KSTP,KPER,PERTIM,TOTIM,NCOL,
+        DO I=1,NROW
+        DO J=1,NCOL
+         BUFF(J,I,1)=VOID(J,I,KQ)
+        ENDDO
+        ENDDO
+        CALL ULASAV(BUFF(1,1,1),TEXT(11),KSTP,KPER,PERTIM,TOTIM,NCOL,
      1              NROW,KQ,ISWOCU(11))
        ENDIF
        ENDDO
@@ -1437,7 +1462,12 @@ C7------PRINT AND STORE THICKNESS FOR EACH SYSTEM OF INTERBEDS.
      1             KPER,NCOL,NROW,K,ISWOCF(12),IOUT)
        ENDIF
        IF(OCFLG2(24,NNSTP)) THEN
-        CALL ULASAV(THICK(1,1,KQ),TEXT(12),KSTP,KPER,PERTIM,TOTIM,NCOL,
+        DO I=1,NROW
+        DO J=1,NCOL
+         BUFF(J,I,1)=THICK(J,I,KQ)
+        ENDDO
+        ENDDO
+        CALL ULASAV(BUFF(1,1,1),TEXT(12),KSTP,KPER,PERTIM,TOTIM,NCOL,
      1              NROW,KQ,ISWOCU(12))
        ENDIF
        ENDDO
@@ -1454,7 +1484,12 @@ C7------PRINT AND STORE LAYER-CENTER ELEVATION FOR EACH LAYER.
      1             KPER,NCOL,NROW,KKL,ISWOCF(13),IOUT)
        ENDIF
        IF(OCFLG2(26,NNSTP)) THEN
-        CALL ULASAV(ZC(1,1,KKL),TEXT(13),KSTP,KPER,PERTIM,TOTIM,NCOL,
+        DO I=1,NROW
+        DO J=1,NCOL
+         BUFF(J,I,1)=ZC(J,I,KKL)
+        ENDDO
+        ENDDO
+        CALL ULASAV(BUFF(1,1,1),TEXT(13),KSTP,KPER,PERTIM,TOTIM,NCOL,
      1              NROW,KKL,ISWOCU(13))
        ENDIF
       ENDDO

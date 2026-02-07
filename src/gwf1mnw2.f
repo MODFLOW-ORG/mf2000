@@ -1761,7 +1761,7 @@ C     ------------------------------------------------------------------
      &  hstrt(ncol,nrow,nlay),SC1(ncol,nrow,nlay),
      &  CV(NCOL,NROW,NLAY),delr(ncol), delc(nrow),hold(NCOL,NROW,NLAY),
      & LAYHDT(NLAY),HK(NCOL,NROW,NLAY),VKA(NCOL,NROW,NLAY)
-      dimension WELLID(mnwmax)
+      dimension WELLID(mnwmax),BOTM(NCOL,NROW,0:NBOTM)
       COMMON /DISCOM/LBOTM(999),LAYCBD(999)
 C
       verysmall = 1.0D-8
