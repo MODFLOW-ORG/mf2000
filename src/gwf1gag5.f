@@ -665,7 +665,7 @@ C SGWF1GAG5LO Lake GAGING STATIONS--RECORD DATA (Write output to separate files)
 C
 C     ******************************************************************
 C
-!dep  Passed two new variables into lake gage ouput   7/6/2009
+!dep  Passed two new variables into lake gage output   7/6/2009
 !dep  Passed DELH AND TDELH from LAK3BD into gage output 
 !dep   in place of STGOLD2 AND STAGES 8/27/2009
       SUBROUTINE SGWF1GAG5LO(IGGLST,NUMGAGE,IUNITGWT,STGNEW,CLAKE,

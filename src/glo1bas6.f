@@ -904,7 +904,7 @@ C  Define array using array reader
              ANAME=' MULT. ARRAY: '//MLTNAM(M)
              CALL U2DREL(RMLT(1,1,M),ANAME,NROW,NCOL,0,INMULT,IOUT)
           ELSE
-C  Define array as aritmetic combination of other multiplier arrays
+C  Define array as arithmetic combination of other multiplier arrays
 C  Start by initializing the array to 0.
              WRITE(IOUT,10) MLTNAM(M)
    10        FORMAT(1X,/1X,'Calculated multiplier array: ',A)

@@ -476,7 +476,7 @@ C
         GOTO 26
        ELSE
         WRITE(IOUT,*)
-     1      ' Hydrograph specified for non-existent strem reach'
+     1      ' Hydrograph specified for non-existent stream reach'
         WRITE(IOUT,*) 'Hydrograph Record will be ignored.'
         GO TO 10
        ENDIF

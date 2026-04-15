@@ -257,7 +257,7 @@ c     check WELLID vs existing names
 c     set PUMPLOC and PUMPCAP
         MNW2(11,MNWID)=PUMPLOC
         MNW2(22,MNWID)=PUMPCAP
-c     CapTable has max 27 entires, so PUMPCAP must not be > 25
+c     CapTable has max 27 entries, so PUMPCAP must not be > 25
         if(PUMPCAP.GT.25) then
           write(iout,*) '***ERROR*** PUMPCAP cannot be greater than 25'
           CALL USTOP('MNW2 ERROR - PUMPCAP')
@@ -1413,7 +1413,7 @@ c     if PUMPLOC>0, read PUMPLAY,PUMPROW,PUMPCOL
           MNW2(16,MNWID)=PUMPCOL
 
         ELSEIF(PUMPLOC.LT.0) THEN
-c     if PUMPLOC<0, read Zpump and calulate PUMPLAY,PUMPROW,PUMPCOL
+c     if PUMPLOC<0, read Zpump and calculate PUMPLAY,PUMPROW,PUMPCOL
           READ(in,*) Zpump
 c         loop over nodes in this well
           firstnode=MNW2(4,MNWID)
@@ -2191,7 +2191,7 @@ c   Loop over all wells
 c   Only operate on active wells (MNW2(1,iw)=1 and IBOUND>0
         if (MNW2(1,iw).EQ.1) then
           qdes = mnw2(5,iw)
-c   If Capacity restrictions are set, Qdes here is actually the retricted Qpot
+c   If Capacity restrictions are set, Qdes here is actually the restricted Qpot
           if(mnw2(27,iw).ne.0) qdes = mnw2(29,iw)
           hwell = mnw2(17,iw)
           firstnode=MNW2(4,iw)
@@ -2230,7 +2230,7 @@ c   If iqslv=1, Well will be simulated as a GHB
                   if((qdes-qact)**2 .gt. small               ) iqslv = 1
                   if(abs(qact).lt.verysmall .and.hsim.gt.hmax) iqslv = 0
                   if(abs(qact).lt.verysmall .and.hsim.lt.hmax) iqslv = 1
-C-LFK   Set iqslv=0 if qact=0 or if PUMPCAP overides Hlimit constraint
+C-LFK   Set iqslv=0 if qact=0 or if PUMPCAP overrides Hlimit constraint
                   if(mnw2(27,iw).gt.1) iqslv = 0
                   if(abs(qact).lt.verysmall) iqslv = 0
                   if(abs(qdes).lt.verysmall .or. 
@@ -3223,7 +3223,7 @@ c calculate dhp (Delta-H due to Penetration) using analytical solution
 c
                 CALL PPC(dhp,ISOLNFLAG,thck,Kh,Kz,SS,QQ,rw,ZPD,ZPL)
 c          
-c  if analyitcal solution failed, report no partial penetration and set dhp=0.0
+c  if analytical solution failed, report no partial penetration and set dhp=0.0
                 if(ISOLNFLAG.EQ.0.AND.ITFLAG.GT.0.and.QQ.ne.0.D0) then
 c  if alpha <= 0.2, shut well off if PPC did not converge
                   if(alpha.lt.0.2) then
@@ -3393,7 +3393,7 @@ c       For the "NONE" option, multiply the Kh by 1000 to equivalate Hnew and hw
         if(LOSSTYPE.EQ.0) then
           cel2wel2=1.0D3*((Txx*Tyy)**0.5D0)/thck    
 c
-c       THEIM option (LOSSTYPE.EQ.1) only needs A, so no need to calculate  B or C
+c       THIEM option (LOSSTYPE.EQ.1) only needs A, so no need to calculate  B or C
 c
 c       SKIN (LINEAR) option, calculate B, C=0
         elseif(LOSSTYPE.EQ.2) then
@@ -3856,7 +3856,7 @@ c get qnet
 c   Set flux at top of first node equal to Qnet (if pump at top)
 c     or set to zero if pump is somewhere else
 c
-c   Set flux inbetween node 1 and node 2 (saved at top of node 2) equal to flux at 
+c   Set flux in between node 1 and node 2 (saved at top of node 2) equal to flux at
 c     that node and Qnet (if pump at top)
 c     or just to flow if pump is somewhere else
         if(nodepump.eq.firstnode) then
@@ -3957,7 +3957,7 @@ c   Define node and next node
          dx2=DELR(C2)             
          dy1=DELC(R1)             
          dy2=DELC(R2)             
-C     convert to real coodinates
+C     convert to real coordinates
          x1=0 
          do C=1,C1-1
            x1=x1+DELR(C)
@@ -4010,7 +4010,7 @@ c
            z1=MNWNOD(26,INODE)
            z2=MNWNOD(26,INODE+1)
          end if
-c     caculate distance between nodes
+c     calculate distance between nodes
       betweennodes=SQRT(((x1-x2)**2)+((y1-y2)**2)+((z1-z2)**2))
 c
 c
@@ -4031,7 +4031,7 @@ c   if this is a vertical segment, define lengths with elevations, skip other ca
           MNWNOD(24,INODE)=z1-bot1  
         endif       
         MNWNOD(23,INODE+1)=top2-z2         
-c  if blank spaces inbetween, save that length
+c  if blank spaces in between, save that length
         if(bot1.ne.top2) MNWNOD(25,INODE)=bot1-top2
         ivert2(INODE)=1
         ivert1(INODE+1)=1
@@ -4237,7 +4237,7 @@ c       if exit point is on boundary with second cell, done with both segments
           else
             lzf=0.d0
           end if
-c   if idone still=0, then there are blank spaces inbetween nodes.  Calculate
+c   if idone still=0, then there are blank spaces in between nodes.  Calculate
 c   length of that segment by getting intersection out of last node
           if(idone.eq.0) then
             is_intersection=0
@@ -4289,7 +4289,7 @@ c       if z2face intersection point lies within cell, this is exit point
             else
              lzf=0.d0
             end if
-c  now that we have both node exit intersection points, blank distance is betweem
+c  now that we have both node exit intersection points, blank distance is between
 c  them.  Save in MNWNOD(25) of the first node between them            
             lbf=SQRT(((xi-xi2)**2)+((yi-yi2)**2)+((zi-zi2)**2))     
             MNWNOD(25,INODE)=lbf 
@@ -4699,7 +4699,7 @@ c       if ro/rw is <1, 'A' term will be negative.  Warn user and cut off flow f
         Ay = log(roy/rw) / Tpi2y
         Ax = log(rox/rw) / Tpi2x
 c
-c       THEIM option (LOSSTYPE.EQ.1) only needs A, so no need to calculate  B or C
+c       THIEM option (LOSSTYPE.EQ.1) only needs A, so no need to calculate  B or C
 c
 c       SKIN (LINEAR) option, calculate B, C=0
         if(LOSSTYPE.EQ.2) then
@@ -4996,7 +4996,7 @@ C
 C7--SET KK=1 (NECESSARY FOR SUBROUTINE LTST2):
       KK=1
 C
-C7a-CACULATE DIMENSIONLESS VARIABLES TO PASS TO LAPLACE TRANSFORM
+C7a-CALCULATE DIMENSIONLESS VARIABLES TO PASS TO LAPLACE TRANSFORM
 C    SOLUTION SUBROUTINES 
 C
        IOWS=2

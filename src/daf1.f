@@ -13,10 +13,10 @@ C     + + + + + + + + + + + COMMONS  + + + + + + + + + + + + + + + + + +
       INCLUDE 'startdaf.com'
       INCLUDE 'ground.com'
 C
-C     + + + + + + + + + + + COMMON DEFINTIONS (startdaf.com) + + + + + +
+C     + + + + + + + + + + + COMMON DEFINITIONS (startdaf.com)  + + + + +
 C     IDBG,NBRCH NXSEC(N) VIN(I,N)
 C
-C     +  + + + + + + + + + + COMMON DEFINTIONS  (ground.com) + + + + + +
+C     +  + + + + + + + + + + COMMON DEFINITIONS  (ground.com)  + + + + +
 C     AQGW(I,N,J) BC(I,N,J) BEL(I,N) BTH(I,N) CND(I,N) NCL(I,N) NLY(I,N)
 C     NRW(I,N) VGW(I,N,J)
 C
@@ -227,10 +227,10 @@ C     + + + + + + + + + + + + + COMMONS  + + + + + + + + + + + + + + + +
       INCLUDE 'startdaf.com'
       INCLUDE 'ground.com'
 C
-C     + + + + + + + + COMMON DEFINTIONS  (startdaf.com)  + + + + + + + +
+C     + + + + + + + + COMMON DEFINITIONS  (startdaf.com) + + + + + + + +
 C     AQ(I,N) NBRCH NHRR NXSEC(N) TIME TRB(I,N) V(I,N) VIN(I,N)
 C
-C     + + + + + + + + COMMON DEFINTIONS  (ground.com)  + + + + + + + + +
+C     + + + + + + + + COMMON DEFINITIONS  (ground.com) + + + + + + + + +
 C     AQGW(I,N,J) BC(I,N,J) CCSTR(I,N) NCL(I,N) NLY(I,N) NRW(I,N)
 C     RHSSTR(I,N) SEP(I,N) SSEP(I,N) VGW(I,N)
 C
@@ -358,11 +358,11 @@ C     + + + + + + + + + + + + + COMMONS  + + + + + + + + + + + + + + + +
       INCLUDE 'startdaf.com'
       INCLUDE 'ground.com'
 C
-C     + + + + + + + + COMMON DEFINTIONS  (startdaf.com)  + + + + + + + +
+C     + + + + + + + + COMMON DEFINITIONS  (startdaf.com) + + + + + + + +
 C     AO(I,N) A1(I,N) A2(I,N) IDBG NBRCH NHRR NXSEC(N) VIN(I,N)
 C     W1(I,N) W2(I,N) X(I,N)
 C
-C     + + + + + + + + COMMON DEFINTIONS  (ground.com)  + + + + + + + + +
+C     + + + + + + + + COMMON DEFINITIONS  (ground.com) + + + + + + + + +
 C     BEL(I,N) BTH(I,N) CND(I,N) CSTR(I,N) NCL(I,N) NLY(I,N)
 C     NRW(I,N) QSTR(I,N) SEP(I,N) STAGE(I,N) VGW(I,N)
 C
@@ -508,10 +508,10 @@ C     + + + + + + + + + + + + + COMMONS  + + + + + + + + + + + + + + + +
       INCLUDE 'startdaf.com'
       INCLUDE 'ground.com'
 C
-C     + + + + + + + + COMMON DEFINTIONS  (startdaf.com)  + + + + + + + +
+C     + + + + + + + + COMMON DEFINITIONS  (startdaf.com) + + + + + + + +
 C     DT JTS QI IDBG NHRR TIME TRB(I,N)
 C
-C     + + + + + + + + COMMON DEFINTIONS  (ground.com)  + + + + + + + + +
+C     + + + + + + + + COMMON DEFINITIONS  (ground.com) + + + + + + + + +
 C     BC(I,N,J) CCSTR(I,N)  CSTR(I,N) NCL(I,N) NLY(I,N) NRW(I,N)
 C     QSTR(I,N) RHSSTR(I,N) SEP(I,N) SSEP(I,N) STAGE(I,N)
 C
@@ -606,10 +606,10 @@ C     + + + + + + + + + + + + + COMMONS  + + + + + + + + + + + + + + + +
       INCLUDE 'startdaf.com'
       INCLUDE 'ground.com'
 C
-C     + + + + + +  COMMON DEFINTIONS  (startdaf.com) + + + + + + + + + +
+C     + + + + + +  COMMON DEFINITIONS  (startdaf.com)  + + + + + + + + +
 C     AQ(I,N) NBRCH NHRR NXSEC(N) TRB(I,N) V(I,N)
 C
-C     + + + + + + + + COMMON DEFINTIONS  (ground.com)  + + + + + + + + +
+C     + + + + + + + + COMMON DEFINITIONS  (ground.com) + + + + + + + + +
 C     AQGW(I,N,J) BC(I,N,J) NCL(I,N) NRW(I,N) NLY(I,N) SSEP(I,N)
 C     VGW(I,N,J)
 C

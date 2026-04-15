@@ -38,7 +38,7 @@ C      RCLOSE -- RESIDUAL CONVERGENCE CRITERION
 C      HCLOSE -- HEAD-CHANGE CONVERGENCE CRITERION
 C      DAMP -- DAMPING PARAMETER
 C      IADAMP -- ADAPTIVE DAMPING FLAG
-C      IOUTGMG -- OUTPUT CONTROLL
+C      IOUTGMG -- OUTPUT CONTROL
 C      IN -- INPUT UNIT NUMBER
 C      IOUT -- OUTPUT UNIT NUMBER
 C      HNEW -- CURRENT APPROXIMATION
@@ -75,7 +75,7 @@ C***********************************************************************
       SUBROUTINE GMG1ALG(NCOL,NROW,NLAY,MXITER,IITER,
      &                   RCLOSE,HCLOSE,DAMP,IADAMP,IOUTGMG,IN,IOUT)
 C--------------------------------------------------------------------
-C     EXPLICIT DECLERATIONS
+C     EXPLICIT DECLARATIONS
 C--------------------------------------------------------------------
       USE MHC, ONLY: MHC1ALG
       IMPLICIT NONE
@@ -365,7 +365,7 @@ C--------------------------------------------------------------------------
 
 C
 C--------------------------------------------------------------------
-C     ADD CORECTION
+C     ADD CORRECTION
 C--------------------------------------------------------------------
   100 CONTINUE
       DAMPMHC=DDAMP                                                 !ERB
@@ -500,7 +500,7 @@ C2B-----THE RELATIVE REDUCTION IS LESS THAN 50%, INDICATING THE
 C2B-----SOLUTION IS NOT PROGRESSING ADEQUATELY.  BASED ON HOW FAR FROM
 C2B-----"RRED" IS FROM 50%, THE DAMPING IS MORE OR LESS AGGRESSIVE.
 C2B-----NOTE: FOR THIS CASE, THE MAXIMUM VALUE OF DAMP WILL BE 0.3 + DLOW
-C2B-----SO SETTING DLOW=0.2 IS APPROPIATE SO DAMP WON'T EXCEED 0.5
+C2B-----SO SETTING DLOW=0.2 IS APPROPRIATE SO DAMP WON'T EXCEED 0.5
           DDAMP=0.075/(0.75-RRED) + DLOW
         ENDIF
 C3

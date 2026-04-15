@@ -1282,7 +1282,7 @@ C3C-----ALL TRANSMISSIVE TERMS ARE 0, SO CONVERT CELL TO NO FLOW.
    60 CONTINUE
       IF(IZFLG.EQ.1) WRITE(IOUT,500)
   500 FORMAT(/,1X
-     & ,'Nodes are often elminated for the following reasons:',//
+     & ,'Nodes are often eliminated for the following reasons:',//
      & ,'1) Hydrogeologic units are not continuous throughout the '
      & ,'model domain and gaps are present, or',/
      & ,'2) The parameters do not define the hydraulic properties '
@@ -1502,7 +1502,7 @@ C3------LOOP THROUGH EACH CELL, AND CALCULATE SATURATED THICKNESS.
       DO 200 I=1,NROW
       DO 200 J=1,NCOL
 C
-C3A-----SET STAURATED THICKNESS=0. FOR DRY CELLS.
+C3A-----SET SATURATED THICKNESS=0. FOR DRY CELLS.
       IF(IBOUND(J,I,K).EQ.0) THEN
          CC(J,I,K)=ZERO
       ELSE
@@ -1599,7 +1599,7 @@ C3------LOOP THROUGH EACH CELL, AND CALCULATE SATURATED THICKNESS.
       DO 200 I=1,NROW
       DO 200 J=1,NCOL
 C
-C3A-----SET STAURATED THICKNESS=0. FOR DRY CELLS.
+C3A-----SET SATURATED THICKNESS=0. FOR DRY CELLS.
       IF(IBOUND(J,I,K).EQ.0) THEN
          CC(J,I,K)=ZERO
       ELSE
@@ -2170,7 +2170,7 @@ C-----------------New head is in this unit
                     CRHS=CRHS+RMLT0*BNP*BOTU
                     IF(IFLG.EQ.1) CRHS=CRHS-RMLT0*BNP*HN
                   ELSEIF(HO.LT.BOTU.AND.HN.GT.TOPU) THEN
-C-----------------Old head is below and new head is abov this unit
+C-----------------Old head is below and new head is above this unit
                     CRHS=CRHS+RMLT0*BNP*(BOTU-TOPU)
                   ENDIF
                 ENDIF
@@ -3097,7 +3097,7 @@ C
      &                        HNWHGU(J,I,NU)-QN*0.5*THCKU/VK
             ENDIF
           ELSE
-C---------FIRST, PROPOGATE HEAD FROM MIDDLE OF CELL TO MIDDLE OF UNIT
+C---------FIRST, PROPAGATE HEAD FROM MIDDLE OF CELL TO MIDDLE OF UNIT
             DO 400 KL=KT,KB
               TOPKL=BOTM(J,I,LBOTM(KL)-1)
               BOTKL=BOTM(J,I,LBOTM(KL))
@@ -3125,7 +3125,7 @@ C---------FIRST, PROPOGATE HEAD FROM MIDDLE OF CELL TO MIDDLE OF UNIT
               GOTO 410
             ENDIF
   400       CONTINUE
-C---------NOW, PROPOGATE CELL TO BOTTOM OF UNIT
+C---------NOW, PROPAGATE CELL TO BOTTOM OF UNIT
   410       IF(NNU.GT.1) THEN
               TOPKB=BOTM(J,I,LBOTM(KB)-1)
               BOTKB=BOTM(J,I,LBOTM(KB))
@@ -4817,7 +4817,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4)
 C
 C     ******************************************************************
-C     Calculate the D coefficent
+C     Calculate the D coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -4843,7 +4843,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AS1 coefficent
+C     Calculate the AS1 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -4869,7 +4869,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AS2 coefficent
+C     Calculate the AS2 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -4895,7 +4895,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AS3 coefficent
+C     Calculate the AS3 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -4920,7 +4920,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AS4 coefficent
+C     Calculate the AS4 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -4945,7 +4945,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AW1 coefficent
+C     Calculate the AW1 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -4971,7 +4971,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AW2 coefficent
+C     Calculate the AW2 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -4996,7 +4996,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AW3 coefficent
+C     Calculate the AW3 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -5021,7 +5021,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AW4 coefficent
+C     Calculate the AW4 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -5047,7 +5047,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AE1 coefficent
+C     Calculate the AE1 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -5073,7 +5073,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AE2 coefficent
+C     Calculate the AE2 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -5100,7 +5100,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AE3 coefficent
+C     Calculate the AE3 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -5127,7 +5127,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AE4 coefficent
+C     Calculate the AE4 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -5153,7 +5153,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AN1 coefficent
+C     Calculate the AN1 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -5179,7 +5179,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AN2 coefficent
+C     Calculate the AN2 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -5205,7 +5205,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AN3 coefficent
+C     Calculate the AN3 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:
@@ -5232,7 +5232,7 @@ c======================================================================
      &                          TAA3,TAB3,TBB3,TAA4,TAB4,TBB4,D)
 C
 C     ******************************************************************
-C     Calculate the AN4 coefficent
+C     Calculate the AN4 coefficient
 C     ******************************************************************
 C
 C        SPECIFICATIONS:

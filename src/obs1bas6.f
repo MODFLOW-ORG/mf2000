@@ -2427,7 +2427,7 @@ C----------READ FIRST TRANSIENT OBSERVATIONS AT ONE LOCATION
               N1 = N - 1
               NT = -NDER(4,N1)
               NTC = 1
-C-----------READ ITEM 6 (FIRST OCCURENCE)
+C-----------READ ITEM 6 (FIRST OCCURRENCE)
               READ (IUH,*) OBSNAM(N1), IREFSP, TOFFSET, HOBS(N1),
      &                       WT(N1), DUM, IWT, IPLOT(N1)
               NAMES(N1) = OBSNAM(N1)

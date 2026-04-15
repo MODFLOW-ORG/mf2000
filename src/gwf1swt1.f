@@ -406,7 +406,7 @@ C ------values and STARTING EFFECTIVE STRESS VALUES.
          PCS(JC,IR,K)=EST(JC,IR,K)+PCSOFF(JC,IR,K)                     !SL ADDED OPTION
        ELSE
 C ------MAKE SURE THAT STARTING PRECONSOLIDATION STRESS VALUES
-C ------ARE CONSISTANT WITH STARTING EFFECTIVE STRESS VALUES.
+C ------ARE CONSISTENT WITH STARTING EFFECTIVE STRESS VALUES.
         IF (PCS(JC,IR,K).LT.EST(JC,IR,K)) PCS(JC,IR,K)=EST(JC,IR,K)
        ENDIF
 C ------Set effective stress for previous step.   
@@ -720,7 +720,7 @@ C ------values and STARTING EFFECTIVE STRESS VALUES.
          pcs(jc,ir,k)=est(jc,ir,k)+PCSOFF(jc,ir,k)                     !sl added option
        else
 C ------MAKE SURE THAT STARTING PRECONSOLIDATION STRESS VALUES
-C ------ARE CONSISTANT WITH STARTING EFFECTIVE STRESS VALUES.
+C ------ARE CONSISTENT WITH STARTING EFFECTIVE STRESS VALUES.
         IF (PCS(jc,ir,k).LT.EST(jc,ir,k)) PCS(jc,ir,k)=EST(jc,ir,k)
        endif
 C ------Set effective stress for previous step.   

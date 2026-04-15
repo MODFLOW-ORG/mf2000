@@ -155,7 +155,7 @@ c
         backspace(in)
       endif
 c
-c     Test for creation of a WEL1 package and auxillary output files
+c     Test for creation of a WEL1 package and auxiliary output files
 c
       iok = 1
       do while( iok.eq.1 )
@@ -214,7 +214,7 @@ c5------print number of spaces in x array used by well package.
       write(iout,4) isp
     4 format(1x,i6,' ELEMENTS IN X ARRAY ARE USED FOR MNW1')
 c
-c  Write header in Auxillary BYNODE file if KPER=1 & IO>0
+c  Write header in Auxiliary BYNODE file if KPER=1 & IO>0
 c
       if ( iowell2(2).ne.0 ) then
         io = abs(iowell2(2))
@@ -222,7 +222,7 @@ c
      +        8x,1hQ,5x,6hH-Well,5x,6hH-Cell,5x,6hQW-Avg)')
       endif
 c
-c  Write header in Auxillary QSUM file if KPER=1 & IO>0
+c  Write header in Auxiliary QSUM file if KPER=1 & IO>0
 c
       if ( iowell2(3).ne.0 ) then
         io = abs(iowell2(3))
@@ -648,7 +648,7 @@ c
         write (iout,*) 'WELLS WILL NOT BE PRINTED'
       endif
 c
-c  Write blank fields in Auxillary BYNODE file if KPER=1 & IO>0
+c  Write blank fields in Auxiliary BYNODE file if KPER=1 & IO>0
 c
       if (totim.lt.1e-26 .and. iowell2(2).ne.0 ) then
         io = abs(iowell2(2))
@@ -658,7 +658,7 @@ c
         enddo
       endif
 c
-c  Write blank fields in Auxillary QSUM file if KPER=1 & IO>0
+c  Write blank fields in Auxiliary QSUM file if KPER=1 & IO>0
 c
       if (totim.lt.1e-26 .and. iowell2(3).ne.0 ) then
         io = abs(iowell2(3))
@@ -1189,7 +1189,7 @@ c -----print the individual rates if requested(iwl2cb<0).
      +         m,il,ir,ic,q, hwell,hnew(n), dd, qwbar, sL, sNL
             endif
 c
-c -----print the individual rates to auxillary file if requested(iwl2cb<0).
+c -----print the individual rates to auxiliary file if requested(iwl2cb<0).
             iobynd = abs(iowell2(2))
             if( iobynd.gt.0 ) then
               if(  ioch.eq.1 .or. iowell2(2).lt.0)then
@@ -1261,7 +1261,7 @@ c -----print the summed rates if requested(iwl2cb<0).
               write(iout,'(A26,1x,2i6,6(1x,g12.6))')
      +         MNWsite(m),m,ne,qsum, hwell, dd, qwbar
             endif
-c -----print the summed rates to auxillary file if requested .
+c -----print the summed rates to auxiliary file if requested .
             ioQsum = abs(iowell2(3))
             if( ioQsum.gt.0 ) then
               if(  ioch.eq.1 .or. iowell2(3).lt.0)then
@@ -1375,7 +1375,7 @@ c         9   = I/O unit for well output
 c        16   = Header Flag   Print= 0 / NoPrint = 1
 c------------------------------------------------------------------
 c
-c   Test auxillary output files for cleaning data sets
+c   Test auxiliary output files for cleaning data sets
       iobynd = abs(iowell2(2))
       if( iobynd.gt.0 ) then
         write(iobynd,'(a32)') EOFtag
@@ -1424,7 +1424,7 @@ c   Write a Header ?????
           endif
 c   END of "Write a Header"  Section
 C _________________          Bug FIX 1/14/2006 KJH _______________________________________
-c    Overwrote Hwell & Conc varibles before storing.
+c    Overwrote Hwell & Conc variables before storing.
           HwellOUT = well2(3,iCNT)    !! Could use well2() array directly.  Opted for
           ConcOUT  = well2(4,iCNT)    !! copying to temporary variables for clarity.
 c
@@ -1785,7 +1785,7 @@ c
       tx2 = txt
       call UPCASE(tx2)
 c
-c    Test for switching control to an auxillary input file
+c    Test for switching control to an auxiliary input file
 c
       ki = index(txt,':')
       if( index(tx2,'REDIRECT').gt.0 .and. ki.gt.0 ) then
@@ -1798,7 +1798,7 @@ c
         goto 5
       endif
 c
-c    Test for returning io control from auxillary input to master input file
+c    Test for returning io control from auxiliary input to master input file
 c
       if( index(tx2,'RETURN')  .gt.0 .and.
      +    index(tx2,'CONTROL') .gt.0      ) goto 10
@@ -1812,10 +1812,10 @@ c
       if( index(tx2,'<STOP>') .gt. 0 ) ierr = 2
       return
 c
-c    Report error in opening auxillary input file and stop
+c    Report error in opening auxiliary input file and stop
 c
    20 write(*,*)
-      write(*,*) '  ERROR opening auxillary input file  '
+      write(*,*) '  ERROR opening auxiliary input file  '
       write(*,*)
       write(*,'(2x,10h The file:,2x,a40,16h does not exist.)')  afile
       write(*,*)

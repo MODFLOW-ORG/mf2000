@@ -11,7 +11,7 @@ C     Route through each branch.
 C     + + + PARAMETERS + + +
       INCLUDE 'params.inc'
 C     NOSC   - Maximum number of cross sections (nodes) allowed in branch
-C     NOSH   - Maximum number of shocks allowed in brach
+C     NOSH   - Maximum number of shocks allowed in branch
 C              (NOSH should be at least 4 times NOSC)
 C
 C     + + + DUMMY ARGUMENTS + + +
@@ -37,7 +37,7 @@ C     QI      - Insignificant discharge (QP/100000)
 C     TRB(I)  - new flow in trib at node I
 C     TF(I)   - flow in trib at start of time step at node I
 C     VI      - Insignificant volume (QI*DTS)
-C     X(I)    - dist of node I from u/s boundry
+C     X(I)    - dist of node I from u/s boundary
 C
 C     + + + LOCAL VARIABLES + + +
       INTEGER  I,IDT,IC(NOSH),INX,JJ,K,KC,KK,KL,KM,KR,K1,L,LT(NOSH),
@@ -47,7 +47,7 @@ C     + + + LOCAL VARIABLES + + +
 C
 C     + + + LOCAL VARIABLE DEFINITIONS + + +
 C     A      - cross sectional area A=AO+A1*Q**A2
-C     ATF(I) - actual tributary flow at node as liminted by supply
+C     ATF(I) - actual tributary flow at node as limited by supply
 C     COF    - local coefficient
 C     TPT    - local coefficient
 C     XR1    - local coefficient
@@ -211,7 +211,7 @@ C       *********** Compute mixed discharge ****************************
         ERV=VL-VS
         IF(IDBG.EQ.1.AND.NN.EQ.1)WRITE(LUOT,*)'Start,VM',VM
   110   IF(ABS(ERV).GT.VI)THEN
-C         ************** Need another itteration ***********************
+C         ************** Need another iteration ***********************
           IF(QS.GT.0.0)THEN
             AA=(ALOG(QL)-ALOG(QS))/(ALOG(VL)-ALOG(VS))
             QT=QL*((VM/VL)**AA)
@@ -393,7 +393,7 @@ C         ******************** Update NTW for upstream wave ************
             NT(K-1)=NTW
           GO TO 200
   290   CONTINUE
-C       *************  Complete trib withdrawls ************************
+C       *************  Complete trib withdrawals ************************
         DO 300 I=2,INX
           XR=X(I)-0.1
           CALL FKAI (KAI,NS,PX,XR)
@@ -502,7 +502,7 @@ C     + + + PARAMETERS + + +
       INCLUDE 'params.inc'
 C
 C     + + + PARAMETER DEFINITIONS + + +
-C     NOSC   - Maximum number of cross sections (nodes) allowed in brach
+C     NOSC   - Maximum number of cross sections (nodes) allowed in branch
 C     NOSH   - Maximum number of shocks allowed in branch
 C              (NOSH should be at least 4 times NOSC)
 C

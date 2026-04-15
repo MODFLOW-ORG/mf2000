@@ -15,7 +15,7 @@ C
      #                TIME,TRB,V,VIN,VI,W1,W2,X,XFACT
       SAVE /STARTI/,/STARTR/
 C
-C     + + + + + + + + + + + COMMON DEFINTIONS (startdaf.com) + + + + + +
+C     + + + + + + + + + + + COMMON DEFINITIONS (startdaf.com)  + + + + +
 C     AO(I,N)  Cross sectional area at zero flow for subreach I, branch N
 C     AQ(I,N)  Discharge at node I, branch N (time step averaged)
 C     A1(I,N)  Cross sectional area at a flow of 1.0.
@@ -30,7 +30,7 @@ C     JNCD(N)  d/s junction no. for branch N (number interior first)
 C     JNCU(N)  u/s junction no. for branch N (number interior first)
 C     JGO      Number of time steps between output in "flow.out"
 C     JTS      Number of time steps from midnight to start of model
-C     NBRCH    Number of branchs
+C     NBRCH    Number of branches
 C     NHR      Number of time steps to be modeled
 C     NHRR     Number of time steps to be repeated
 C     NJNCT    Number of interior junctions

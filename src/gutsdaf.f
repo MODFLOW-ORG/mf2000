@@ -6,11 +6,11 @@ C     + + + + + + + + + + + + + PURPOSE  + + + + + + + + + + + + + + + +
 C     ************  This subroutine starts DAFLOW **********************
 C     DAFLOW uses a variable DF=Q^(1-W2)/(2 W1 S) and assumes 
 C     A=AO+A1(Q**A2), computes celerity from dQ/dA, conserves mass to
-C     compute the average flow at the nodes. All boundry conditions
+C     compute the average flow at the nodes. All boundary conditions
 C     represent the average during the time step. The first BC represents
 C     the flow from time 0 to Dt, for example. Dispersion is modeled by
 C     mixing at shocks over a dispersion distance.
-C     The Q is at the node point with QT occuring just upstream of node.
+C     The Q is at the node point with QT occurring just upstream of node.
 C
 C     + + +  + + + + + + + + + + + PARAMETERS  + + + + + + + + + + + + +
       INCLUDE 'params.inc'
@@ -22,7 +22,7 @@ C
 C     + + + + + + + + + + + COMMONS  + + + + + + + + + + + + + + + + + +
       INCLUDE 'startdaf.com'
 C
-C     + + + + + + + + + +  COMMON VARIBLES (startdaf.com)  + + + + + + +
+C     + + + + + + + + + +  COMMON VARIABLES (startdaf.com) + + + + + + +
 C     AO(I,N) A1(I,N) A2(I,N) F(K,N) FI(K,N) DT IENG IOUT(I,N)
 C     JNCD(N) JNCU(N) JGO JTS NBRCH NHR NHRR NJNCT NS(N) NSI(N) NXSEC(N)
 C     PF(N) PX(K,N) PXI(K,N) QI SL(I,N) TF(I,N) TFI(I,N) TIME VIN(I,N)
@@ -238,7 +238,7 @@ C
 C     ************************ read boundary conditions ****************
       READ(LUIN,1000,ERR=900)NBC
       IF(NBC.GT.0)THEN
-C       ***********  boundary conditons for this time are to be read ***
+C       *********** boundary conditions for this time are to be read ***
         DO 40 K=1,NBC
           READ(LUIN,1010,ERR=910)N,I,TRB(I,N)
           JJ=IFIX(TIME/DT+0.501)-JTS+1
@@ -265,7 +265,7 @@ C     + + +  + + + + + + + + + + + PARAMETERS  + + + + + + + + + + + + +
 C     + + + + + + + + + + + COMMONS  + + + + + + + + + + + + + + + + + +
       INCLUDE 'startdaf.com'
 C
-C     + + + + + + + + + +  COMMON VARIBLES (startdaf.com)  + + + + + + +
+C     + + + + + + + + + +  COMMON VARIABLES (startdaf.com) + + + + + + +
 C     F(K,N) FI(K,N) NBRCH NS(N) NSI(N) NXSEC(N) PX(K,N) PXI(K,N)
 C     TF(I,N) TFI(I,N)
 C     + + + + + + + + + + + + LOCAL VARIABLES  + + + + + + + + + + + + +
@@ -306,7 +306,7 @@ C     NOBR   - Maximum number of branches allowed in model
 C
 C     + + + + + + + + + + + COMMONS  + + + + + + + + + + + + + + + + + +
       INCLUDE 'startdaf.com'
-C     + + + + + + + + + +  COMMON VARIBLES (startdaf.com)  + + + + + + +
+C     + + + + + + + + + +  COMMON VARIABLES (startdaf.com) + + + + + + +
 C     NBRCH NJNCT 
 C     + + + + + + + + + + + + LOCAL VARIABLES  + + + + + + + + + + + + +
       INTEGER JCD(NOBR),N,NCD(NOBR)
@@ -350,7 +350,7 @@ C
 C     + + + + + + + + + + + COMMONS  + + + + + + + + + + + + + + + + + +
       INCLUDE 'startdaf.com'
 C
-C     + + + + + + + + + +  COMMON VARIBLES (startdaf.com)  + + + + + + +
+C     + + + + + + + + + +  COMMON VARIABLES (startdaf.com) + + + + + + +
 C     AO(I,N) AQ(I,N) A1(I,N) A2(I,N) DT F(K,N) IDBG JNCD(N) JNCU(N) 
 C     NS(N) NXSEC(N) PX(K,N) QI SL(I,N) TF(I,N) TRB(I,N) VI W1(I,N) 
 C     W2(I,N) X(I,N)
@@ -416,7 +416,7 @@ C     NOBR   - Maximum number of branches allowed in model
 C     NOSC   - Maximum number of cross sections (nodes) allowed in branch
 C     + + + + + + + + + + + COMMONS  + + + + + + + + + + + + + + + + + +
       INCLUDE 'startdaf.com'
-C     + + + + + + + + + + + + COMMON VARIBLES (startdaf.com) + + + + + +
+C     + + + + + + + + + + + + COMMON VARIABLES (startdaf.com)  + + + + +
 C     AO(I,N) AQ(I,N) A1(I,N) A2(I,N) DT F(I,N) IDBG NS(N) NXSEC(N)
 C     PX(I,N) QI TF(I,N) TRB(I,N) V(I,N) X(I,N)
 C
@@ -469,7 +469,7 @@ C     NOBR   - Maximum number of branches allowed in model
 C     NOSC   - Maximum number of cross sections (nodes) allowed in branch
 C     + + + + + + + + + + + COMMONS  + + + + + + + + + + + + + + + + + +
       INCLUDE 'startdaf.com'
-C     + + + + + + + + + +  COMMON VARIBLES (startdaf.com)  + + + + + + +
+C     + + + + + + + + + +  COMMON VARIABLES (startdaf.com) + + + + + + +
 C     AQ(I,N) JNCD(N) JNCU(N) NBRCH NXSEC(N) PF(N) TRB(I,N)
 C
 C     + + + + + + + + + + + + LOCAL VARIABLES  + + + + + + + + + + + + +
@@ -521,7 +521,7 @@ C
 C     + + + + + + + + + + + + + COMMONS  + + + + + + + + + + + + + + + +
       INCLUDE 'startdaf.com'
 C
-C     + + + + + +  COMMON DEFINTIONS  (startdaf.com) + + + + + + + + + +
+C     + + + + + +  COMMON DEFINITIONS (startdaf.com) + + + + + + + + + +
 C     AO(I,N) AQ(I,N) A1(I,N) A2(I,N) DT IOUT(I,N) JGO JTS NBRCH 
 C     NXSEC(N) TIME TRB(I,N) V(I,N) W1(I,N) W2(I,N) X(I,N) 
 C

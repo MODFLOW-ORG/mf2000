@@ -1023,7 +1023,7 @@ C9------CHECK IF STREAM REACH IS IN ACTIVE CELL.
       ELSE IF ( kkptflg.GT.1 ) THEN
         WRITE (Iout, 9024) kkptflg
  9024   FORMAT (/1X, '*** WARNING *** A TOTAL OF ', I5,
-     +          'STREAM REACHES ',
+     +          ' STREAM REACHES ',
      +          'WERE ASSIGNED TO CELLS WHERE THE IBOUND ARRAY ',
      +          'WAS ZERO.'/1X, 'PROGRAM SEARCHES FOR UPPERMOST ',
      +          'ACTIVE CELL IN VERTICAL COLUMN FOR ALL ',
@@ -1397,7 +1397,7 @@ C9------READ DATA ACCORDING TO VARIABLE ISFROPT.
 C
 C10-----PLACE STREAM SEGMENT IDENTITY NUMBERS IN ISEG ARRAY.
 C         5 ASSIGNED TO SEGMENTS NOT RECEIVING TRIBUTARY FLOW.
-C         6 ASSINGED TO SEGMENTS THAT DIVERT FLOW.
+C         6 ASSIGNED TO SEGMENTS THAT DIVERT FLOW.
 C         7 ASSIGNED TO SEGMENTS RECEIVING TRIBUTARY FLOW.
         k5 = 0
         k6 = 0
@@ -1985,7 +1985,7 @@ C         ZONE.
         END IF
       END DO
 Cdep    Added new subroutine to compute tables for lake outflow
-C44------COMPUTE VAULES FOR ARRAYS DKLOTFLW AND DLKSTAGE WHEN OUTFLOW 
+C44------COMPUTE VALUES FOR ARRAYS DKLOTFLW AND DLKSTAGE WHEN OUTFLOW
 C          FROM LAKES ARE COMPUTED IN THE LAKE PACKAGE.
       IF ( Iunitlak.GT.0 ) THEN
         CALL GWF1SFR2LAKOUTFLW(Nlakesar, Nstrm, Nss, Nsegdim, Const,   
@@ -2769,7 +2769,7 @@ C         GREATER THAN 1.
               dlet2 = (etstr*(widthc-widthd))/(depthc-depthd)
               dlwp1 = (wetperma-wetpermb)/(deptha-depthb)
               dlwp2 = (wetpermc-wetpermd)/(depthc-depthd)
-Cdep revised pp1,pp2,et1,and et2, wrong placment of parenthesis.
+Cdep revised pp1,pp2,et1,and et2, wrong placement of parenthesis.
               pp1 = precip*(width1)+dlpp1*dlh
               pp2 = precip*(width2)+dlpp2*dlh
               et1 = etstr*(width1)+dlet1*dlh
@@ -2800,7 +2800,7 @@ Cdep    removed +dlh from calculation of flobot1 and flobot2
 C
 C48-----DETERMINE IF LEAKAGE LIMITED BY FLOW IN CHANNEL.
               IF ( width1.GT.NEARZERO ) THEN
-Cdep revised flwpet1, wrong placment of parenthesis.
+Cdep revised flwpet1, wrong placement of parenthesis.
                 flwpet1 = precip*(width1)+dlpp1*dlh
      +                    - etstr*(width1)+dlet1*dlh
               ELSE
@@ -6418,7 +6418,7 @@ C11-----MULTIPLE TRAIL WAVES BELOW AND ABOVE WATER TABLE.
                     END IF
 C
 C12-----ONLY ONE LEAD TRAIL AND ONE TRAIL WAVE BELOW WATER TABLE
-C         AND THERE ARE MUTIPLE TRAIL WAVES IN SET ABOVE WATER TABLE.
+C         AND THERE ARE MULTIPLE TRAIL WAVES IN SET ABOVE WATER TABLE.
                   ELSE IF ( Itrlsth(j).GT.1 ) THEN
                     DO k = iset + 1, iset + Itrlsth(j) - 1
                       Ltrlst(L, k) = 1

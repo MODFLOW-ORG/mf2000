@@ -72,7 +72,7 @@ static CCFD_operator *CCFD_ptr;
  *
  *  Data returned to the GMG FORTRAN interface program includes:
  *
- *    ISIZ  -- Size in MB of data allocted by GMG.
+ *    ISIZ  -- Size in MB of data allocated by GMG.
  *    IERR  -- Value less than 0 indicates error.
  *    ITER  -- PCG iterations
  *    BIGR0 -- l2-norm of initial residual
@@ -93,7 +93,7 @@ void MF2KGMG_ALLOCATE(int* NCOL, int* NROW, int* NLAY,
 void MF2KGMG_FREE();
 
 /* Assemble GMG data:
- * Arguments that are pointer to void are either singel precision
+ * Arguments that are pointer to void are either single precision
  * or double precision and are resolved at run time.
  */
 void MF2KGMG_ASSEMBLE(double* BIGR0, void* CC, void* CR, void* CV, 

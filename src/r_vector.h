@@ -13,7 +13,7 @@
  *  The r_vector is the basic data structure for
  *  representing flux or pressure nodal values.
  *  An r_vector structure contains a pointer
- *  to a double vector and a ponter to an r_data structure.
+ *  to a double vector and a pointer to an r_data structure.
  *
  *  The r_data structure contains the length of the 
  *  double vector and the number of elements in the

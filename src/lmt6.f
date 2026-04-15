@@ -267,23 +267,23 @@ C--ERROR CHECKING
       ENDIF
  1200 FORMAT(/1X,'Both RIV and STR packages are used in flow model;',
      &  /1X,'The Link-MT3DMS file must be saved with EXTENDED header.')
- 1202 FORMAT(/1X,'The FHB Pacakge is used in flow simulation;',
+ 1202 FORMAT(/1X,'The FHB Package is used in flow simulation;',
      &  /1X,'The Link-MT3DMS file must be saved with EXTENDED header.')
- 1204 FORMAT(/1X,'The RES Pacakge is used in flow simulation;',
+ 1204 FORMAT(/1X,'The RES Package is used in flow simulation;',
      &  /1X,'The Link-MT3DMS file must be saved with EXTENDED header.')
- 1206 FORMAT(/1X,'The TLK Pacakge is used in flow simulation;',
+ 1206 FORMAT(/1X,'The TLK Package is used in flow simulation;',
      &  /1X,'The Link-MT3DMS file must be saved with EXTENDED header.')
- 1208 FORMAT(/1X,'The IBS Pacakge is used in flow simulation;',
+ 1208 FORMAT(/1X,'The IBS Package is used in flow simulation;',
      &  /1X,'The Link-MT3DMS file must be saved with EXTENDED header.')
- 1210 FORMAT(/1X,'The LAK Pacakge is used in flow simulation;',
+ 1210 FORMAT(/1X,'The LAK Package is used in flow simulation;',
      &  /1X,'The Link-MT3DMS file must be saved with EXTENDED header.')
- 1212 FORMAT(/1X,'The MNW Pacakge is used in flow simulation;',
+ 1212 FORMAT(/1X,'The MNW Package is used in flow simulation;',
      &  /1X,'The Link-MT3DMS file must be saved with EXTENDED header.')
- 1214 FORMAT(/1X,'The DRT Pacakge is used in flow simulation;',
+ 1214 FORMAT(/1X,'The DRT Package is used in flow simulation;',
      &  /1X,'The Link-MT3DMS file must be saved with EXTENDED header.')
- 1216 FORMAT(/1X,'The ETS Pacakge is used in flow simulation;',
+ 1216 FORMAT(/1X,'The ETS Package is used in flow simulation;',
      &  /1X,'The Link-MT3DMS file must be saved with EXTENDED header.')
- 1224 FORMAT(/1X,'A USER-DEFINED Pacakge is used in flow simulation;',
+ 1224 FORMAT(/1X,'A USER-DEFINED Package is used in flow simulation;',
      &  /1X,'The Link-MT3DMS file must be saved with EXTENDED header.')
  1300 FORMAT(/1X,'Both EVT and ETS Packages are used in flow ',
      &  'simulation;'

@@ -13,7 +13,7 @@ C
      1               CSTR,STAGE,QSTR,CCSTR,RHSSTR,VGW
       SAVE /GROUNDI/,/GROUNDR/
 C
-C     +  + + + + + + + + + + COMMON DEFINTIONS  (ground.com) + + + + + +
+C     + + + + + + + + + + + COMMON DEFINITIONS  (ground.com) + + + + + +
 C     AQGW(I,N,J) Discharge at node I, brch N, averaged during time step J
 C     BC(I,N,J) Boundary condition for node I, branch N, & time step J.
 C     BEL(I,N)  Elevation of stream bed for subreach I, branch N
@@ -24,7 +24,7 @@ C                 Seepage per unit head otherwise
 C     NCL(I,N)  Column number of seepage connection to subreach I, branch N
 C     NLY(I,N)  Layer number of seepage connection to subreach I, branch N
 C     NRW(I,N)  Row number of seepage connection to subreach I, branch N
-C     QSTR(I,N) Zero if water table is abov river bottom, seepage otherwise
+C     QSTR(I,N) Zero if water table is above river bottom, seepage otherwise
 C     SEP(I,N)  Seepage to river subreach I, branch N during daflow time step
 C     SSEP(I,N) Seepage to river subreach I, branch N during MODFLOW time step
 C     STAGE(I,N) Elev of river surface if water table above river bottom
